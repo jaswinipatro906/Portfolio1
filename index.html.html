@@ -1,0 +1,501 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Jaswini Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout concept: a design canvas. Each section is a labelled frame; bold flat color blocks on a quiet ground. */
+:root{
+  --bg:#F3F5FC; --surface:#FFFFFF; --ink:#15162B; --muted:#585B77; --line:#DADEF0; --dots:#CBD0E8;
+  --cobalt:#2D4FE8; --cobalt-text:#2D4FE8;
+  --coral:#FF6A4D; --lemon:#FFCF33; --mint:#27C3A0; --pink:#FF8FC0;
+  --ink-fixed:#15162B; --white:#FFFFFF;
+  --display:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;
+  --body:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'DM Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E0F1F; --surface:#181A31; --ink:#F2F3FF; --muted:#A4A7C6; --line:#2C2E4E; --dots:#2A2C4A;
+    --cobalt-text:#8EA2FF; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E0F1F; --surface:#181A31; --ink:#F2F3FF; --muted:#A4A7C6; --line:#2C2E4E; --dots:#2A2C4A;
+  --cobalt-text:#8EA2FF; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink); font-family:var(--body); font-size:16px; line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px)); padding-right:max(16px,env(safe-area-inset-right,0px)); padding-block:0;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cobalt-text); outline-offset:3px; border-radius:6px}
+.wrap{max-width:1120px; margin:0 auto}
+h1,h2,h3{font-family:var(--display); line-height:1.05; margin:0; text-wrap:balance; letter-spacing:-0.02em}
+p{margin:0}
+.eyebrow{font-family:var(--mono); font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--cobalt-text); font-weight:500}
+
+/* header */
+.top{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding-block:20px}
+.logo{display:flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--display); font-weight:800; font-size:18px}
+.logo i{display:grid; place-items:center; width:38px; height:38px; border-radius:11px; background:var(--cobalt); color:var(--white); font-style:normal; font-size:16px}
+.nav{display:flex; gap:6px; flex-wrap:wrap}
+.nav a{text-decoration:none; font-weight:500; font-size:14.5px; padding:8px 14px; border-radius:99px; color:var(--muted)}
+.nav a:hover{background:var(--surface); color:var(--ink)}
+.nav a.cta{background:var(--ink); color:var(--bg)}
+.nav a.cta:hover{background:var(--cobalt); color:var(--white)}
+
+/* hero */
+.hero{display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); gap:40px; align-items:center; padding-block:36px 72px}
+.hero h1{font-size:clamp(40px,6.4vw,76px); font-weight:800; margin-block:14px 20px}
+.hero h1 mark{background:var(--lemon); color:var(--ink-fixed); padding:0 .14em; border-radius:.16em; box-decoration-break:clone; -webkit-box-decoration-break:clone}
+.hero .lede{font-size:18px; color:var(--muted); max-width:48ch}
+.btns{display:flex; gap:12px; flex-wrap:wrap; margin-top:28px}
+.btn{display:inline-flex; align-items:center; gap:8px; font:700 15px var(--body); text-decoration:none; padding:14px 22px; border-radius:14px; border:2px solid var(--ink); cursor:pointer; transition:transform .15s, box-shadow .15s}
+.btn.solid{background:var(--cobalt); border-color:var(--cobalt); color:var(--white)}
+.btn.ghost{background:transparent; color:var(--ink)}
+.btn:hover{transform:translateY(-2px); box-shadow:0 6px 0 var(--ink)}
+.btn.solid:hover{box-shadow:0 6px 0 #17298f}
+.facts{display:flex; gap:10px; flex-wrap:wrap; margin-top:30px}
+.pill{font-family:var(--mono); font-size:12.5px; padding:6px 12px; border-radius:99px; border:1.5px solid var(--line); background:var(--surface); color:var(--muted)}
+
+/* canvas mock */
+.canvas{position:relative; min-height:440px; border-radius:28px; background-color:var(--surface); background-image:radial-gradient(var(--dots) 1.4px, transparent 1.4px); background-size:22px 22px; border:1.5px solid var(--line); overflow:hidden}
+.ftag{position:absolute; left:11%; top:34px; font-family:var(--mono); font-size:12px; color:var(--cobalt-text)}
+.frame{position:absolute; left:11%; top:62px; width:min(250px,62%); border:2px solid var(--cobalt); padding:14px}
+.frame .h{position:absolute; width:9px; height:9px; background:var(--white); border:2px solid var(--cobalt)}
+.h.a{left:-6px; top:-6px}.h.b{right:-6px; top:-6px}.h.c{left:-6px; bottom:-6px}.h.d{right:-6px; bottom:-6px}
+.pcard{background:var(--bg); border-radius:18px; padding:18px; display:grid; gap:10px}
+.avatar{width:58px; height:58px; border-radius:50%; background:var(--coral); color:var(--ink-fixed); display:grid; place-items:center; font:800 22px var(--display)}
+.pcard strong{font-family:var(--display); font-size:20px; line-height:1.1}
+.pcard small{color:var(--muted); font-size:13px}
+.chips{display:flex; gap:6px; flex-wrap:wrap}
+.chip{font-size:12px; font-weight:700; padding:4px 10px; border-radius:99px; color:var(--ink-fixed)}
+.pcard .fake{margin-top:4px; background:var(--cobalt); color:var(--white); text-align:center; padding:10px; border-radius:12px; font-weight:700; font-size:14px}
+.swatches{position:absolute; right:8%; top:46px; display:flex; flex-direction:column; gap:10px}
+.swatches span{width:46px; height:46px; border-radius:14px; box-shadow:0 2px 0 rgba(0,0,0,.12)}
+.spec{position:absolute; right:8%; bottom:34px; width:150px; height:150px; border-radius:30px; background:var(--lemon); color:var(--ink-fixed); display:grid; place-items:center; font:800 72px var(--display); transform:rotate(-6deg)}
+.spec small{position:absolute; bottom:12px; left:0; right:0; text-align:center; font:500 11px var(--mono); letter-spacing:.06em}
+.blob{position:absolute; left:6%; bottom:-40px; width:210px; height:210px; border-radius:50%; background:var(--mint); opacity:.95}
+.cursor{position:absolute; left:48%; top:56%; display:flex; align-items:flex-start; gap:2px; animation:drift 6s ease-in-out infinite}
+.cursor b{margin:14px 0 0 -2px; font:500 12px var(--mono); background:var(--pink); color:var(--ink-fixed); padding:3px 9px; border-radius:0 10px 10px 10px}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(-26px,-18px)}}
+
+/* sections */
+section{padding-block:56px}
+.head{display:grid; gap:12px; margin-bottom:32px; max-width:720px}
+.head h2{font-size:clamp(32px,4.6vw,52px); font-weight:800}
+.about{display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:24px}
+.block{border-radius:26px; padding:30px}
+.block.cobalt{background:var(--cobalt); color:var(--white)}
+.block.cobalt p{font-size:19px; line-height:1.55}
+.principles{background:var(--surface); border:1.5px solid var(--line); display:grid; gap:14px; align-content:start}
+.principles h3{font-size:22px}
+.principles ul{list-style:none; margin:0; padding:0; display:grid; gap:12px}
+.principles li{display:flex; align-items:center; gap:12px; font-weight:500}
+.principles li i{flex:none; width:16px; height:16px; border-radius:5px}
+
+.skills{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:18px}
+.skill{border-radius:24px; padding:26px; color:var(--ink-fixed); display:grid; gap:16px; align-content:start}
+.skill h3{font-size:24px; font-weight:800}
+.skill .tags{display:flex; flex-wrap:wrap; gap:8px}
+.skill .tags span{background:rgba(255,255,255,.6); font-weight:500; font-size:14px; padding:6px 12px; border-radius:99px}
+.skill.c1{background:var(--cobalt); color:var(--white)}
+.skill.c1 .tags span{background:rgba(255,255,255,.18)}
+.skill.span2{grid-column:1/-1}
+
+.projects{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:22px}
+.proj{background:var(--surface); border:1.5px solid var(--line); border-radius:28px; overflow:hidden; display:flex; flex-direction:column; transition:transform .2s}
+.proj:hover{transform:translateY(-4px)}
+.stage{padding:26px; min-height:230px; display:grid; place-items:center; position:relative}
+.stage .cap{position:absolute; left:16px; bottom:10px; font:500 11px var(--mono); color:var(--ink-fixed); opacity:.7}
+.pbody{padding:24px 26px 28px; display:grid; gap:12px; align-content:start; min-width:0}
+.pbody h3{font-size:26px; font-weight:800}
+.stack{font-family:var(--mono); font-size:12.5px; color:var(--cobalt-text)}
+.pbody ul{margin:0; padding-left:20px; display:grid; gap:8px; color:var(--muted)}
+/* mock: browser */
+.win{width:100%; max-width:300px; background:var(--white); border-radius:14px; overflow:hidden; box-shadow:0 10px 0 rgba(21,22,43,.14)}
+.win .bar{display:flex; gap:5px; padding:9px 12px; background:#E9ECF8}
+.win .bar i{width:9px; height:9px; border-radius:50%; background:#B7BDD8}
+.win .pg{padding:14px; display:grid; gap:10px}
+.ln{height:9px; border-radius:5px; background:#D8DCEE}
+.ln.big{height:16px; width:70%; background:var(--ink-fixed)}
+.tiles{display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+.tiles i{aspect-ratio:1; border-radius:9px}
+/* mock: weather */
+.phone{width:188px; background:var(--white); border-radius:28px; padding:16px; display:grid; gap:10px; box-shadow:0 10px 0 rgba(21,22,43,.14); color:var(--ink-fixed)}
+.search{background:#EEF0FA; border-radius:11px; padding:8px 12px; font-size:12px; color:#7A7E9B}
+.phone .t{font:800 44px/1 var(--display)}
+.phone .s{font-size:12px; color:#585B77}
+.mini{display:grid; grid-template-columns:1fr 1fr; gap:8px}
+.mini div{background:#EEF0FA; border-radius:11px; padding:8px 10px; font-size:11px; color:#585B77}
+.mini b{display:block; font-size:15px; color:var(--ink-fixed)}
+/* mock: dashboard */
+.dash{width:100%; max-width:280px; background:var(--white); border-radius:16px; padding:16px; display:grid; gap:12px; box-shadow:0 10px 0 rgba(21,22,43,.14); color:var(--ink-fixed)}
+.dash .row{display:grid; grid-template-columns:1fr 1fr; gap:8px}
+.dash .field{background:#EEF0FA; border-radius:9px; height:26px}
+.meter{display:grid; grid-template-columns:repeat(3,1fr); gap:4px; position:relative; padding-top:6px}
+.meter i{height:12px; border-radius:6px}
+.meter em{position:absolute; top:-2px; left:50%; width:3px; height:22px; background:var(--ink-fixed); border-radius:2px}
+.dash .lab{font:500 11px var(--mono); color:#585B77; display:flex; justify-content:space-between}
+
+/* education */
+.steps{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; position:relative}
+.step{background:var(--surface); border:1.5px solid var(--line); border-radius:24px; padding:24px; display:grid; gap:8px; align-content:start}
+.step .yr{font:500 13px var(--mono); color:var(--cobalt-text)}
+.step h3{font-size:22px}
+.step .sch{color:var(--muted); font-size:15px}
+.step .cg{margin-top:6px; display:inline-flex; align-items:baseline; gap:6px; font-family:var(--display); font-weight:800; font-size:34px; font-variant-numeric:tabular-nums}
+.step .cg small{font:500 13px var(--mono); color:var(--muted)}
+.step.now{background:var(--lemon); border-color:var(--lemon); color:var(--ink-fixed)}
+.step.now .yr,.step.now .sch,.step.now .cg small{color:var(--ink-fixed)}
+
+.more{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:18px; margin-top:18px}
+.medal{display:flex; gap:20px; align-items:center; background:var(--mint); color:var(--ink-fixed); border-radius:24px; padding:26px}
+.coin{flex:none; width:76px; height:76px; border-radius:50%; background:var(--lemon); border:4px solid var(--ink-fixed); display:grid; place-items:center; font:800 30px var(--display)}
+.medal h3{font-size:22px; margin-bottom:4px}
+.langs{background:var(--surface); border:1.5px solid var(--line); border-radius:24px; padding:26px; display:grid; gap:14px; align-content:start}
+.langs h3{font-size:22px}
+.langs .tags{display:flex; gap:8px; flex-wrap:wrap}
+.langs .tags span{font-weight:700; padding:8px 16px; border-radius:99px; color:var(--ink-fixed)}
+
+/* contact */
+.contact{background:var(--coral); color:var(--ink-fixed); border-radius:36px; padding:clamp(28px,5vw,60px); display:grid; gap:26px; overflow:hidden; position:relative}
+.contact h2{font-size:clamp(34px,5.6vw,68px); font-weight:800; max-width:14ch}
+.contact .eyebrow{color:var(--ink-fixed)}
+.reach{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:14px; position:relative}
+.reach div{display:flex; align-items:center; justify-content:space-between; gap:12px; background:var(--white); border-radius:18px; padding:14px 16px 14px 20px; min-width:0}
+.reach .v{min-width:0}
+.reach small{display:block; font:500 11.5px var(--mono); color:#585B77; letter-spacing:.08em; text-transform:uppercase}
+.reach span{font-weight:700; font-size:17px; overflow-wrap:anywhere; user-select:all}
+.copy{flex:none; font:700 13px var(--body); border:0; background:var(--ink-fixed); color:var(--white); padding:9px 14px; border-radius:11px; cursor:pointer}
+.copy:hover{background:var(--cobalt)}
+.sun{position:absolute; right:-70px; top:-70px; width:240px; height:240px; border-radius:50%; background:var(--lemon)}
+.btn.sm{padding:11px 18px; font-size:14px; justify-self:start; margin-top:4px}
+.open{flex:none; font:700 13px var(--body); text-decoration:none; background:var(--cobalt); color:var(--white); padding:9px 14px; border-radius:11px}
+.open:hover{background:var(--ink-fixed)}
+.m{color:var(--ink-fixed); padding:0 .12em; border-radius:.14em; box-decoration-break:clone; -webkit-box-decoration-break:clone}
+.m.mn{background:var(--mint)} .m.lem{background:var(--lemon)} .m.pk{background:var(--pink)}
+.badge{position:absolute; left:11%; bottom:24px; display:flex; align-items:center; gap:9px; background:var(--white); color:var(--ink-fixed); font:700 13px var(--body); padding:9px 15px; border-radius:99px; box-shadow:0 4px 0 rgba(21,22,43,.18)}
+.badge i{width:10px; height:10px; border-radius:50%; background:var(--mint); box-shadow:0 0 0 0 rgba(39,195,160,.6); animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 9px rgba(39,195,160,0)}100%{box-shadow:0 0 0 0 rgba(39,195,160,0)}}
+.marq{overflow:hidden; border-radius:22px; background:var(--cobalt); color:var(--white); padding-block:18px; margin-block:4px 20px}
+.marq .track{display:flex; width:max-content; animation:slide 30s linear infinite}
+.marq span{font:800 clamp(20px,2.6vw,28px) var(--display); white-space:nowrap; padding-inline:20px; display:flex; align-items:center; gap:40px; letter-spacing:-0.01em}
+.marq span::after{content:"\2726"; color:var(--lemon); font-size:.8em}
+.marq span:nth-child(3n+2)::after{color:var(--pink)}
+.marq span:nth-child(3n)::after{color:var(--mint)}
+@keyframes slide{to{transform:translateX(-50%)}}
+.skill{transition:transform .2s}
+.skill:hover{transform:translateY(-5px) rotate(-1deg)}
+.proj:hover{box-shadow:8px 8px 0 var(--ink)}
+.proj,.step,.block{transition:transform .2s, box-shadow .2s}
+.step:hover{transform:translateY(-4px)}
+footer a{color:var(--cobalt-text); font-weight:700}
+.canvas{min-height:480px}
+footer{padding-block:34px 44px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); font-size:14px}
+
+@media (max-width:860px){
+  .hero,.about{grid-template-columns:minmax(0,1fr)}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .canvas{min-height:480px}
+}
+@media (max-width:520px){
+  .spec{width:110px; height:110px; font-size:54px}
+  .swatches span{width:38px; height:38px}
+  .block{padding:24px}
+  .nav a{padding:7px 10px; font-size:14px}
+}
+@media (prefers-reduced-motion: reduce){
+  .cursor,.marq .track,.badge i{animation:none} html{scroll-behavior:auto} .btn,.proj,.skill,.step{transition:none}
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#top" aria-label="Jaswini, back to top"><i>JJ</i>J. Jaswini</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Projects</a>
+      <a href="#education">Education</a>
+      <a class="cta" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <span class="eyebrow">UI/UX Designer · B.Sc. Computer Science 2026</span>
+        <h1>Designing screens that feel <mark>clear</mark>, usable and consistent.</h1>
+        <p class="lede">I plan user flows, sketch wireframes and build prototypes in Figma, then code the layouts in HTML, CSS and JavaScript so the design survives the handoff.</p>
+        <div class="btns">
+          <a class="btn solid" href="#work">See my projects</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+        <div class="facts">
+          <span class="pill">Figma</span><span class="pill">Wireframes</span><span class="pill">Prototypes</span><span class="pill">Responsive</span>
+        </div>
+      </div>
+
+      <div class="canvas" aria-hidden="true">
+        <div class="blob"></div>
+        <div class="badge"><i></i>Open to entry-level roles</div>
+        <span class="ftag">Profile card</span>
+        <div class="frame">
+          <span class="h a"></span><span class="h b"></span><span class="h c"></span><span class="h d"></span>
+          <div class="pcard">
+            <div class="avatar">JJ</div>
+            <strong>J. Jaswini</strong>
+            <small>UI/UX Designer</small>
+            <div class="chips">
+              <span class="chip" style="background:var(--lemon)">Figma</span>
+              <span class="chip" style="background:var(--pink)">Prototyping</span>
+              <span class="chip" style="background:var(--mint)">HTML/CSS</span>
+            </div>
+            <div class="fake">View projects</div>
+          </div>
+        </div>
+        <div class="swatches">
+          <span style="background:var(--cobalt)"></span><span style="background:var(--coral)"></span><span style="background:var(--lemon)"></span><span style="background:var(--mint)"></span><span style="background:var(--pink)"></span>
+        </div>
+        <div class="spec">Aa<small>Bricolage Grotesque</small></div>
+        <div class="cursor">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 2l15 7.5-6.4 1.9L9 18z" fill="#15162B" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <b>Jaswini</b>
+        </div>
+      </div>
+    </div>
+
+    <div class="marq" aria-hidden="true">
+      <div class="track">
+        <span>Wireframes</span><span>Prototypes</span><span>User flows</span><span>Figma</span><span>Usability</span><span>Responsive design</span><span>Typography</span><span>Color theory</span>
+        <span>Wireframes</span><span>Prototypes</span><span>User flows</span><span>Figma</span><span>Usability</span><span>Responsive design</span><span>Typography</span><span>Color theory</span>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="head">
+        <span class="eyebrow">About</span>
+        <h2>An entry-level designer who also <mark class="m mn">writes the front end</mark>.</h2>
+      </div>
+      <div class="about">
+        <div class="block cobalt">
+          <p>I'm an entry-level UI/UX designer with a B.Sc. in Computer Science. I create wireframes, prototypes and user flows in Figma, and I build responsive interfaces in HTML, CSS and JavaScript, which helps me turn designs into working layouts. I'm looking for an entry-level role where I can design clear, usable and visually consistent digital experiences.</p>
+        </div>
+        <div class="block principles">
+          <h3>What I care about</h3>
+          <ul>
+            <li><i style="background:var(--cobalt)"></i>User-centered design</li>
+            <li><i style="background:var(--coral)"></i>Usability principles</li>
+            <li><i style="background:var(--lemon)"></i>Responsive design</li>
+            <li><i style="background:var(--mint)"></i>Consistent type, color and layout</li>
+            <li><i style="background:var(--pink)"></i>Attention to detail</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="head">
+        <span class="eyebrow">Skills</span>
+        <h2>From the first sketch to <mark class="m lem">working code</mark>.</h2>
+      </div>
+      <div class="skills">
+        <div class="skill c1 span2">
+          <h3>UI/UX design</h3>
+          <div class="tags"><span>Wireframing</span><span>Prototyping</span><span>User flows</span><span>UI layouts</span><span>User-centered design</span><span>Usability principles</span><span>Responsive design</span></div>
+        </div>
+        <div class="skill" style="background:var(--coral)">
+          <h3>Visual design</h3>
+          <div class="tags"><span>Typography</span><span>Color theory</span><span>Visual composition</span></div>
+        </div>
+        <div class="skill" style="background:var(--lemon)">
+          <h3>Design tools</h3>
+          <div class="tags"><span>Figma</span><span>FigJam</span><span>Canva</span><span>Sketch</span><span>Adobe XD</span></div>
+        </div>
+        <div class="skill" style="background:var(--mint)">
+          <h3>Front-end development</h3>
+          <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive web design</span></div>
+        </div>
+        <div class="skill" style="background:var(--pink)">
+          <h3>Dev tools</h3>
+          <div class="tags"><span>Visual Studio Code</span><span>Git</span><span>GitHub</span></div>
+        </div>
+        <div class="skill" style="background:var(--lemon)">
+          <h3>Other</h3>
+          <div class="tags"><span>Communication</span><span>Collaboration</span><span>Attention to detail</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="head">
+        <span class="eyebrow">Projects</span>
+        <h2>Three things I <mark class="m pk">designed and built</mark>.</h2>
+      </div>
+      <div class="projects">
+        <article class="proj">
+          <div class="stage" style="background:var(--lemon)" aria-hidden="true">
+            <div class="win">
+              <div class="bar"><i></i><i></i><i></i></div>
+              <div class="pg">
+                <div class="ln big"></div><div class="ln" style="width:90%"></div><div class="ln" style="width:60%"></div>
+                <div class="tiles"><i style="background:var(--cobalt)"></i><i style="background:var(--coral)"></i><i style="background:var(--mint)"></i></div>
+              </div>
+            </div>
+            <span class="cap">Interface sketch</span>
+          </div>
+          <div class="pbody">
+            <h3>Personal Portfolio Website</h3>
+            <span class="stack">HTML5 · CSS3 · JavaScript · Responsive design</span>
+            <ul>
+              <li>Designed and developed a responsive portfolio showcasing UI/UX and web development work.</li>
+              <li>Planned clear navigation and a consistent layout, typography and visual style so the site works across devices.</li>
+              <li>Built interactive UI elements with JavaScript to make browsing the work simple and engaging.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="stage" style="background:var(--cobalt)" aria-hidden="true">
+            <div class="phone">
+              <div class="search">Search city</div>
+              <div class="t">28°</div>
+              <div class="s">Weather conditions</div>
+              <div class="mini"><div>Temperature<b>Now</b></div><div>Humidity<b>Level</b></div></div>
+            </div>
+            <span class="cap" style="color:#fff">Interface sketch</span>
+          </div>
+          <div class="pbody">
+            <h3>Weather Forecast Web Application</h3>
+            <span class="stack">HTML5 · CSS3 · JavaScript · Public weather API</span>
+            <ul>
+              <li>Designed a clean, easy-to-read interface that shows temperature, humidity and weather conditions.</li>
+              <li>Built city-based search that fetches live data from a public weather API, in a responsive layout.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="stage" style="background:var(--mint)" aria-hidden="true">
+            <div class="dash">
+              <div class="lab"><span>Patient data</span><span>Result</span></div>
+              <div class="row"><div class="field"></div><div class="field"></div><div class="field"></div><div class="field"></div></div>
+              <div class="meter"><i style="background:var(--mint)"></i><i style="background:var(--lemon)"></i><i style="background:var(--coral)"></i><em></em></div>
+              <div class="lab"><span>Low</span><span>Medium</span><span>High</span></div>
+            </div>
+            <span class="cap">Interface sketch</span>
+          </div>
+          <div class="pbody">
+            <h3>Kidney Disease Prediction System</h3>
+            <span class="stack">Python · Data preprocessing · LLM-based techniques</span>
+            <ul>
+              <li>Developed a project to support early-stage kidney disease risk assessment from patient data.</li>
+              <li>Preprocessed the data and built an interactive interface to present the results to users.</li>
+            </ul>
+            <a class="btn solid sm" href="https://ckd3-1.onrender.com/" target="_blank" rel="noopener">View live project &#8599;</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="head">
+        <span class="eyebrow">Education</span>
+        <h2>The path so far.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="yr">2020 – 2021</span>
+          <h3>Class X</h3>
+          <span class="sch">PM SHRI Kendriya Vidyalaya</span>
+          <span class="cg">8.67<small>/ 10 CGPA</small></span>
+        </div>
+        <div class="step">
+          <span class="yr">2021 – 2023</span>
+          <h3>Class XII</h3>
+          <span class="sch">PM SHRI Kendriya Vidyalaya</span>
+          <span class="cg">8.34<small>/ 10 CGPA</small></span>
+        </div>
+        <div class="step now">
+          <span class="yr">2023 – 2026</span>
+          <h3>B.Sc. Computer Science</h3>
+          <span class="sch">NIST University</span>
+          <span class="cg">7.82<small>/ 10 CGPA</small></span>
+        </div>
+      </div>
+      <div class="more">
+        <div class="medal">
+          <div class="coin">1</div>
+          <div>
+            <h3>Gold medalist in running</h3>
+            <p>School and national-level competitions, Under-17 and Under-19 categories.</p>
+          </div>
+        </div>
+        <div class="langs">
+          <h3>Languages</h3>
+          <div class="tags">
+            <span style="background:var(--lemon)">English</span><span style="background:var(--pink)">Hindi</span><span style="background:var(--mint)">Punjabi</span><span style="background:var(--coral)">Telugu</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <div class="sun" aria-hidden="true"></div>
+        <span class="eyebrow">Contact</span>
+        <h2>Let's design something clear together.</h2>
+        <div class="reach">
+          <div>
+            <div class="v"><small>Email</small><span>jaswini.patro906@gmail.com</span></div>
+            <button class="copy" type="button" data-copy="jaswini.patro906@gmail.com">Copy</button>
+          </div>
+          <div>
+            <div class="v"><small>Phone</small><span>+91 62391 72906</span></div>
+            <button class="copy" type="button" data-copy="+91 62391 72906">Copy</button>
+          </div>
+          <div>
+            <div class="v"><small>LinkedIn</small><span>linkedin.com/in/j-jaswini-797a643a1</span></div>
+            <a class="open" href="https://www.linkedin.com/in/j-jaswini-797a643a1" target="_blank" rel="noopener">Open &#8599;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>J. Jaswini · UI/UX Designer</span>
+    <span><a href="https://www.linkedin.com/in/j-jaswini-797a643a1" target="_blank" rel="noopener">LinkedIn</a> · Open to entry-level roles</span>
+  </footer>
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var text = btn.getAttribute('data-copy');
+    var label = btn.textContent;
+    function done(ok){
+      btn.textContent = ok ? 'Copied' : 'Select and copy';
+      setTimeout(function(){ btn.textContent = label; }, 1800);
+    }
+    function fallback(){
+      try {
+        var span = btn.parentNode.querySelector('.v span');
+        var r = document.createRange(); r.selectNodeContents(span);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        done(false);
+      } catch(e){ done(false); }
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function(){ done(true); }, fallback);
+    } catch(e){ fallback(); }
+  });
+});
+</script>
+
+</body></html>
